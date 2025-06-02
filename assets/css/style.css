@@ -1,0 +1,545 @@
+/* 중앙 컨테이너 (PC용 가로폭) */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* 겹치는 카드/박스 */
+.overlap-card {
+  max-width: 640px;
+  width: 92%;
+  margin: -70px auto 80px auto;
+  background: #e9ecef;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px #2222;
+  padding: 32px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  z-index: 10;
+  position: relative;
+}
+.overlap-card .q-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+}
+.overlap-card .q-phone {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #FF6900;
+  margin-bottom: 0.7rem;
+}
+.overlap-card .q-desc {
+  color: #888;
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.7;
+  margin: 0;
+  text-align: center;
+}
+
+/* GET A QUOTE 섹션 */
+.quote-section {
+  background: url('../pics/meeting.jpg') center/cover no-repeat;
+  position: relative;
+  min-height: 400px;
+  padding: 120px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.quote-section .overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.38);
+  z-index: 1;
+  pointer-events: none;
+}
+.quote-card {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  width: 94%;
+  margin: 0 auto;
+  background: rgba(32,32,32,0.18);
+  border-radius: 18px;
+  padding: 40px 48px 32px 48px;
+  box-shadow: 0 8px 32px #0002;
+  color: #fff;
+  text-align: center;
+}
+.quote-card .title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+.quote-card p {
+  color: #f7f7fa;
+  font-size: 1.08rem;
+  font-weight: 400;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.quote-card .info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+  font-size: 1.07rem;
+}
+.quote-card .info > div {
+  display: flex;
+  align-items: center;
+}
+.quote-card svg {
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+/* Contact Form 섹션 */
+.contact-section {
+  background: #f7f7fa;
+  padding: 40px 0;
+}
+.contact-form {
+  background: #fff;
+  max-width: 500px;
+  width: 96%;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px #aaa3;
+  padding: 32px;
+}
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 18px;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.contact-form textarea {
+  height: 110px;
+  margin-bottom: 16px;
+}
+.contact-form button {
+  width: 100%;
+  padding: 14px;
+  background: #2437ea;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* --- 반응형 (모바일) --- */
+@media (max-width: 900px) {
+  .quote-card, .overlap-card { padding: 28px 16px; }
+}
+@media (max-width: 640px) {
+  .container, .quote-card, .overlap-card, .contact-form {
+    max-width: 97vw;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+  .quote-section { padding: 50px 0; }
+  .overlap-card { font-size: 1.15rem; }
+  .quote-card .title { font-size: 1.35rem; }
+}
+
+
+
+
+
+
+/* ====== 타임라인(연혁) 전용 CSS ====== */
+.timeline-img-wrap {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 48px auto 32px auto;
+  padding: 0 12px;
+}
+.timeline-section {
+  flex: 1 1 0;
+  min-width: 0;
+}
+.timeline {
+  border-left: 3px solid #555;
+  padding-left: 32px;
+  position: relative;
+}
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 26px;
+  position: relative;
+}
+.timeline-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid #555;
+  position: absolute;
+  left: -36px;
+  top: 2px;
+  box-sizing: border-box;
+}
+.timeline-content {
+  margin-left: 10px;
+}
+.timeline-year {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #555;
+}
+.timeline-desc {
+  font-size: 1.01rem;
+  color: #222;
+  margin-top: 2px;
+}
+.timeline-img-col {
+  flex: 1 1 0;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* 가로 2장 */
+  grid-template-rows: 1fr 1fr 1fr; /* 세로 3장 */
+  gap: 14px;
+  align-items: center;
+  justify-items: center;
+}
+.timeline-img-col img {
+  width: 98%;
+  max-width: 240px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px #2222;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 900px) {
+  .timeline-img-wrap { flex-direction: column; gap: 26px; }
+  .timeline-img-col {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+  }
+  .timeline-img-col img { max-width: 98vw; }
+}
+
+
+
+
+/* ====== 로고 나열 섹션 스타일 ====== */
+/* 기존 로고 그리드 설정 그대로 유지 */
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 공통: 로고 중앙 정렬 */
+.logo-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;  /* 콘텐츠(로고)를 아래쪽으로 밀기 */
+  align-items: center;        /* 가로 중앙 정렬(선택 사항) */
+  /* height: 150px;               원하는 높이 지정 */
+}
+
+/* 1번 로고만 크기 다르게 */
+.logo-item-1 img {
+  width: 60px;   /* 예: 기본 80px 대신 120px */
+  height: auto;
+}
+
+/* 나머지 로고 기본 크기 */
+.logo-item img {
+  max-width: 170px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 캡션 스타일 */
+.logo-caption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* 반응형: 필요 시 크기 재조정 */
+@media (max-width: 900px) {
+  .logo-grid { grid-template-columns: repeat(3, 1fr); }
+  .logo-item-1 img { width: 100px; }
+  .logo-item img     { max-width: 60px; }
+}
+@media (max-width: 600px) {
+  .logo-grid { grid-template-columns: repeat(2, 1fr); }
+  .logo-item-1 img { width: 80px; }
+  .logo-item img     { max-width: 50px; }
+}
+
+
+
+
+
+/* ====== 제품 나열 섹션 스타일 ====== */
+.product-gallery {
+  padding: 20px;
+}
+
+.product-row {
+  display: flex;
+  justify-content: center;  /* 가로 중앙 정렬 */
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.product-row img {
+  border: none;            /* 테두리 제거 */
+  border-radius: 0;        /* 모서리 둥글기 제거 */
+  width: auto;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+
+
+
+
+/* ====== 제품2 나열 섹션 스타일 ====== */
+.product2-gallery {
+  padding: 20px;
+}
+
+.product2-row {
+  display: flex;
+  justify-content: center;  /* 가로 중앙 정렬 */
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.product2-row img {
+  border: none;            /* 테두리 제거 */
+  border-radius: 0;        /* 모서리 둥글기 제거 */
+  width: auto;
+  height: 100px;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+
+/* ====== 제품3 나열 섹션 스타일 ====== */
+.product3-gallery {
+  padding: 20px;
+}
+
+.product3-row {
+  display: flex;
+  justify-content: center;  /* 가로 중앙 정렬 */
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.product3-row img {
+  border: none;            /* 테두리 제거 */
+  border-radius: 0;        /* 모서리 둥글기 제거 */
+  width: auto;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CSS (style.css에 추가) ====== */
+
+.why-us-section {
+  /* 섹션 전체: 카드형, 가운데, 여백/둥근모서리/그림자 */
+  max-width: 740px;
+  margin: 48px auto 40px auto;
+  padding: 32px 24px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 18px #2221;
+}
+.why-us-title {
+  /* 제목: 진한 글씨, 크고 가운데 */
+  font-size: 1.38rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 18px;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+.why-us-body p {
+  /* 본문: 조금 진한 회색, 가독성 */
+  color: #444;
+  font-size: 1.07rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  text-align: center;
+}
+@media (max-width: 640px) {
+  .why-us-section { max-width: 97vw; padding: 18px 4px; }
+  .why-us-title { font-size: 1.11rem; }
+}
+
+
+
+
+
+
+
+/* BODY - WHY FREEMIND 아래 3단 컬럼 레이아웃 */
+.body-section {
+  margin: 60px 0 40px;
+  padding: 0 20rem;        /* 양옆에 2rem 여백 */
+}
+
+.three-col-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.col-box {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 이미지 영역 */
+.col-img {
+  flex: 0 0 250px;
+  overflow: hidden;
+}
+.col-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 텍스트 영역 */
+.col-desc {
+  flex: 1;
+  padding: 1rem 0;
+}
+
+/* 헤딩 */
+.col-desc h3 {
+  color: #f57c00;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 리스트 */
+.col-desc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+.col-desc ul li {
+  position: relative;
+  padding-left: 1.5em;
+  margin-bottom: 0.5rem;
+}
+.col-desc ul li::before {
+  content: "✔︎";
+  position: absolute;
+  left: 0;
+  color: #f57c00;
+}
+
+/* CTA 문구 */
+.cta {
+  margin-top: 1rem;
+  font-weight: 600;
+  text-align: center;
+  color: #333;
+}
+
+/* 반응형 */
+@media (max-width: 900px) {
+  .three-col-grid {
+    grid-template-columns: 1fr;
+  }
+  .col-img {
+    flex: 0 0 200px;
+  }
+}
+
+
+
+/* -------------------------------- 버튼으로 하단이동 시작 ---------------- */
+/* 전역: 부드러운 스크롤 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 버튼 스타일 */
+.btn-contact {
+  display: inline-block;
+  margin: 1rem 0;               /* CTA 위아래 여백 */
+  padding: 0.75rem 1.5rem;      /* 버튼 크기 */
+  background-color: #f57c00;    /* 주황색 배경 */
+  color: #fff;                  /* 흰색 글자 */
+  font-weight: 600;
+  text-decoration: none;        /* 밑줄 제거 */
+  border-radius: 4px;           /* 둥근 모서리 */
+  transition: background 0.2s;
+}
+
+/* 호버 효과 */
+.btn-contact:hover {
+  background-color: #d46b00;    /* 약간 진한 주황 */
+}
+/* -------------------------------- 버튼으로 하단이동 끝 ---------------- */
+
+
+
+
+
